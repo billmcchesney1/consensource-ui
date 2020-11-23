@@ -1,4 +1,5 @@
 import React from 'react';
+import { Auth0Provider } from '@auth0/auth0-react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from 'view/context';
 import { User } from 'stores';
@@ -15,14 +16,20 @@ export const Layout = observer(() => {
   } = useStores();
 
   return (
-    <Router>
-      {isAuthenticated || isAuthenticating ? (
-        <AuthProvider user={user || ({} as User)}>
-          <AuthenticatedLayout />
-        </AuthProvider>
-      ) : (
-        <UnauthenticatedLayout />
-      )}
-    </Router>
+    <Auth0Provider
+      domain="oauth.iam.perf.target.com/auth/oauth/v2"
+      clientId="consensource_npe_im"
+      redirectUri={window.location.origin}
+    >
+      <Router>
+        {isAuthenticated || isAuthenticating ? (
+          <AuthProvider user={user || ({} as User)}>
+            <AuthenticatedLayout />
+          </AuthProvider>
+        ) : (
+          <UnauthenticatedLayout />
+        )}
+      </Router>
+    </Auth0Provider>
   );
 });
