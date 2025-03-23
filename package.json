@@ -64,7 +64,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@material-ui/styles": "^4.9.14",
     "axios": "^0.19.2",
-    "eventsource": "^1.0.7",
+    "eventsource": "^3.0.0",
     "mobx": "^5.15.4",
     "mobx-react-lite": "^2.0.6",
     "mui-datatables": "^3.4.1",
