@@ -76,7 +76,7 @@
     "react-router-dom": "^5.1.2",
     "sawtooth-sdk": "^1.0.5",
     "sjcl": "^1.0.7",
-    "uuid": "^3.3.2"
+    "uuid": "^14.0.0"
   },
   "resolutions": {
     "node-forge": "^0.10.0",
